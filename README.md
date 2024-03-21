@@ -6,7 +6,7 @@ In this assignment, have used the concepts i have learned to complete two Python
 PyBank and PyPoll. Both tasks present a real-world situation where your newly developed Python scripting skills come in handy.
 
 # Repo Introduction
-Inside my local Git repository, create a folder for each Python assignment and name them PyBank and PyPoll.
+Inside my local Git repository, create a folder for each Analysis by Python and name them PyBank and PyPoll.
 In each folder, have created, added the following content:
 
 A new file called main.py. This will be the main script to run for each analysis.
