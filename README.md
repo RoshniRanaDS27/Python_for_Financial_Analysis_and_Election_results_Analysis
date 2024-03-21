@@ -35,7 +35,7 @@ My task was to create a Python script that analyzes the votes and calculates eac
 The total number of votes cast, A complete list of candidates who received votes, The percentage of votes each candidate won, The total number of votes each candidate won, The winner of the election based on popular vote. 
 In addition, final script has both print the analysis to the terminal and export a text file with the results at Analysis folder.
 
-#Lesson learned 
+# Lesson learned 
 Considering what i have learned so far. 
 1. how to import modules like csv. 2. have learned how to read and write files in various formats.
    3. how to store content in variables, lists, and dictionaries. 4. learned how to iterate through basic data structures. And 5. learned how to debug along the way. Using all that i have learned, try to break down my tasks into discrete mini-objectives.
