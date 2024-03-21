@@ -28,3 +28,8 @@ The total number of months included in the dataset,  The net total amount of "Pr
 In addition, final script has both print the analysis to the terminal and export a text file with the results.
 
 # PyPoll Instructions
+In this Analysis, with helping a small, rural town modernize its vote-counting process, a set of poll data was given called election_data.csv. 
+The dataset was composed of three columns: "Voter ID", "County", and "Candidate". 
+My task was to create a Python script that analyzes the votes and calculates each of the following values:
+
+The total number of votes cast, A complete list of candidates who received votes, The percentage of votes each candidate won, The total number of votes each candidate won, The winner of the election based on popular vote. 
