@@ -1,43 +1,69 @@
 import os
-import pandas as pd
+import csv
 
-# Specify the full path to the CSV file
-file_path = "C:/Users/ranar/Downloads/UTOR-VIRT-DATA-PT-02-2024-U-LOLC/Module 3 - Python/Python-Challenge/PyBank/Resources/budget_data.csv"
+csv_file = r'PyBank/Resources/budget_data.csv'
 
-# Read the CSV file using pandas
-df = pd.read_csv(file_path)
+#setup variables
+date = []
+total_sum = 0
+count = 0
+column_index = 1
+previous_value = None
+total_change = 0
+tally = 0
+greatest_inc = 0
+greatest_dec = 0
+month_greatest_inc = ''
+month_greatest_dec = ''
+previous_profit = None
 
-# Calculate financial metrics
-total_months = len(df)
-total_profit_losses = df["Profit/Losses"].sum()
-changes = df["Profit/Losses"].diff()
-average_change = changes.mean()
-greatest_increase = changes.max()
-greatest_increase_date = df.loc[changes.idxmax(), "Date"]
-greatest_decrease = changes.min()
-greatest_decrease_date = df.loc[changes.idxmin(), "Date"]
 
-# Print the financial analysis
+#open csv
+with open(csv_file, 'r') as csvfile:
+    csvreader = csv.reader(csvfile)
+    header = next(csvreader)
+    for row in csvreader:
+        date.append(row[0]) # here we are appending date frmo current row to the list
+        value = int(row[1]) # Converting profit/loss column to integer and summing them up
+        total_sum += value
+        count += 1
+        if previous_profit is not None:
+            change = value - previous_profit
+            total_change += change
+            tally += 1
+#calc greatest inc & dec
+            if change > greatest_inc:
+                greatest_inc = change
+                month_greatest_inc = row[0]
+            elif change<greatest_dec:
+                greatest_dec = change
+                month_greatest_dec = row[0]
+        previous_profit = value
+#calculate the total months
+total_months = len(date)
+#calculate the average
+if tally > 0:
+    avg_change = total_change/ tally
+else:
+     avg_change = 0
+
+#print the output
 print("Financial Analysis")
-print("----------------------------")
-print(f"Total Months: {total_months}")
-print(f"Total: ${total_profit_losses}")
-print(f"Average Change: ${average_change:.2f}")
-print(f"Greatest Increase in Profits: {greatest_increase_date} (${greatest_increase})")
-print(f"Greatest Decrease in Profits: {greatest_decrease_date} (${greatest_decrease})")
+print("------------------------------")
+print(f'Total Months: {total_months}')
+print(f'Total: ${total_sum}')
+print(f'Average Change: {avg_change:.2f}')
+print(f'Greatest Increase in Profits: {month_greatest_inc}(${greatest_inc})')
+print(f'Greatest Decrease in Profits: {month_greatest_dec}(${greatest_dec})')
 
-# Specify the path to the output folder
-output_folder = r"C:\Users\ranar\Downloads\UTOR-VIRT-DATA-PT-02-2024-U-LOLC\Module 3 - Python\Python-Challenge\PyBank\Analysis"
-
-# Export results to a text file in the output folder
-output_file = os.path.join(output_folder, "financial_analysis.txt")
-with open(output_file, "w") as file:
+#Export results to text file
+output_file = "Pybank.txt"
+with open(output_file, 'w') as file:
     file.write("Financial Analysis\n")
-    file.write("----------------------------\n")
-    file.write(f"Total Months: {total_months}\n")
-    file.write(f"Total: ${total_profit_losses}\n")
-    file.write(f"Average Change: ${average_change:.2f}\n")
-    file.write(f"Greatest Increase in Profits: {greatest_increase_date} (${greatest_increase})\n")
-    file.write(f"Greatest Decrease in Profits: {greatest_decrease_date} (${greatest_decrease})\n")
-
-print(f"Financial analysis results have been exported to {output_file}.")
+    file.write("------------------------------\n")
+    file.write(f'Total Months: {total_months}\n')
+    file.write(f'Total: ${total_sum}\n')
+    file.write(f'Average Change: ${avg_change:.2f}\n')
+    file.write(f'Greatest Increase in Profits: {month_greatest_inc}(${greatest_inc})\n')
+    file.write(f'Greatest Decrease in Profits: {month_greatest_dec}(${greatest_dec})\n')
+print(f'Results have been saved to {output_file}')
