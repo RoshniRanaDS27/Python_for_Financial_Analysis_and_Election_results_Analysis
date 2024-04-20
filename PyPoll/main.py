@@ -1,62 +1,54 @@
-import csv
 import os
+import csv
+
+# Path to the CSV File
+csv_file = 'PyPoll/resources/election_data.csv'
 
 # Variables for analysis
 total_votes = 0
-candidates = {}
+candidates_votes = {}
 
-# Specify the path to the output folder
-output_folder = r"c:\Users\ranar\Downloads\UTOR-VIRT-DATA-PT-02-2024-U-LOLC\Module 3 - Python\Python-Challenge\PyPoll\Analysis"
-
-# Read from the file (assuming the provided data is saved in this file)
-input_file_path = 'C:/Users/ranar/Downloads/UTOR-VIRT-DATA-PT-02-2024-U-LOLC/Module 3 - Python/Python-Challenge/PyPoll/resources/election_data.csv'
-
-# Read from the file (assuming the provided data is saved in this file)
-with open('C:/Users/ranar/Downloads/UTOR-VIRT-DATA-PT-02-2024-U-LOLC/Module 3 - Python/Python-Challenge/PyPoll/resources/election_data.csv', 'r') as file:
-    reader = csv.reader(file)
-    next(reader)  # Skip header row
+# Read from the CSV file
+with open(csv_file, 'r') as csvfile:
+    csvreader = csv.reader(csvfile)
+    header = next(csvreader)  # Skip header row
     
-    for row in reader:
+    for row in csvreader:
         total_votes += 1  # Increment total votes for each row
         candidate_name = row[2]  # Assuming the candidate's name is in the third column
         
         # Count votes for each candidate
-        if candidate_name in candidates:
-            candidates[candidate_name] += 1
+        if candidate_name in candidates_votes:
+            candidates_votes[candidate_name] += 1
         else:
-            candidates[candidate_name] = 1
+            candidates_votes[candidate_name] = 1
+
+# Calculate voting percentage
+percentages = {candidate: (votes / total_votes) * 100 for candidate, votes in candidates_votes.items()}
 
 # Determine the winner
-winner = max(candidates, key=candidates.get)
+winner = max(candidates_votes, key=candidates_votes.get)
 
-output_file_path = os.path.join(output_folder, 'election_results.txt')
+# Print the analysis results
+print("Election Results")
+print("------------------")
+print(f"Total Votes: {total_votes}")
+print('-------------------')
+for name, votes in candidates_votes.items():
+    print(f"{name}: {percentages[name]:.2f}% ({votes})")
+print('-------------------------')
+print(f"Winner: {winner}")
+print('----------------------------')
 
-# Print and save the analysis
-with open(output_file_path, 'w') as output_file:
-    output = (
-        f"Election Results\n"
-        f"-------------------------\n"
-        f"Total Votes: {total_votes}\n"
-        f"-------------------------\n"
-    )
-    
-    print(output, end="")
-    output_file.write(output)
-    
-    for candidate, votes in candidates.items():
-        percentage = (votes / total_votes) * 100
-        candidate_results = f"{candidate}: {percentage:.3f}% ({votes})\n"
-        
-        print(candidate_results, end="")
-        output_file.write(candidate_results)
-    
-    winner_summary = (
-        f"-------------------------\n"
-        f"Winner: {winner}\n"
-        f"-------------------------\n"
-    )
- 
-    print(winner_summary)
-    output_file.write(winner_summary)
-    
-print(f"Election results have been exported to {output_file_path}.")
+# Export results into a text file
+output_file = 'PyPoll.txt'
+with open(output_file, 'w') as file:
+    file.write("Election Results\n")
+    file.write("------------------\n")
+    file.write(f"Total Votes: {total_votes}\n")
+    file.write('-------------------\n')
+    for name, votes in candidates_votes.items():
+        file.write(f"{name}: {percentages[name]:.2f}% ({votes})\n")
+    file.write('-------------------------\n')
+    file.write(f"Winner: {winner}\n")
+    file.write('----------------------------')
