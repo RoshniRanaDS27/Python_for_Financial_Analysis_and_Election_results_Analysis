@@ -3,7 +3,7 @@
 # Analysis Background
 The world of programming with Python. 
 In these Analysis, have used the concepts i have learned to complete two Python challenges, 
-PyBank and PyPoll. Both tasks present a real-world situation where your newly developed Python scripting skills come in handy.
+PyBank and PyPoll. Both tasks present a real-world situation where newly developed Python scripting skills come in handy.
 
 # PyBank Instructions
 In this Analysis, created a Python script to analyze the financial records of Banking company. 
