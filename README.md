@@ -65,14 +65,11 @@ The datasets for these Challenges were quite large. This was done purposefully t
 > Useful information that users should know, even when skimming content.
 #
 # Repo Instructions
-Inside my local Git repository, created a folder for each Analysis by Python and name them PyBank and PyPoll.
-In each folder, have created, added the following content:
+- Inside my local `Git` repository, created a folder for each Analysis by `Python` and name them `PyBank` and `PyPoll`.  
 
-A new file called main.py. This will be the main script to run for each analysis.
-
-A Resources folder that contains the CSV files i have used. Made sure that my script has the correct path to the CSV file.
-
-An analysis folder that contains text file that has the results from each analysis.
-
-Pushed these changes to GitHub profile by bash terminal.
+### In each folder, have created, added the following content:  
+- A new file called `main.py`. This will be the main script to run for each analysis.  
+- A `Resources` folder that contains the `CSV` files i have used. Assured that my `script` has the correct path to the `CSV` file.  
+- An `analysis` folder that contains text file that has the results from each analysis.  
+- Pushed these changes to `GitHub` profile by `bash terminal.`
 
