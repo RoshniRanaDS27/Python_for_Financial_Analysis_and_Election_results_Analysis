@@ -1,5 +1,11 @@
-# Python for Financial Analysis and Election results Analysis
+# Python 
+![image](https://github.com/RoshniRanaDS/Data_Analysis_Challenge_Using_Python/assets/161755928/bcaf7997-ec61-447e-b283-78dfc0646e1e)
 
+
+# Python for Financial Analysis and Election results Analysis
+![image](https://github.com/RoshniRanaDS/Data_Analysis_Challenge_Using_Python/assets/161755928/a6bbbf56-c23c-4146-9076-7297a52235ec)
+ & 
+![image](https://github.com/RoshniRanaDS/Data_Analysis_Challenge_Using_Python/assets/161755928/df9c9cdc-3c61-47c7-8816-3ff03efb4a5b)
 
 
 ## Analysis Background
