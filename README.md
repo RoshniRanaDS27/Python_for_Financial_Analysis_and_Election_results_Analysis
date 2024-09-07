@@ -18,6 +18,7 @@ In these Analysis, have used the concepts i have learned to complete `two` Pytho
 > Key information users need to know to achieve their goal.
 #
 ## PyBank Instructions
+<img src="https://userscontent2.emaze.com/images/b6b785fa-7284-48b1-b48c-8ce2cdc17da8/adf899a55cbe013cff554b6b64242f9c.gif" alt="Project 18">  
 In this Analysis, created a `Python` script to analyze the _financial records_ of `Banking` company. 
 `Financial dataset` was given called `budget_data.csv`. The dataset Was composed of two columns: `"Date"` and `"Profit/Losses"`.
 
@@ -31,6 +32,7 @@ The total number of months included in the dataset,  The net `total` amount of "
 #
 
 # PyPoll Instructions
+ <img src="https://media4.giphy.com/media/55m7McmQ9tcD26kQ3I/giphy.gif" class="card-img-top" alt="Project 18"> 
  <img src="https://media3.giphy.com/media/IvV2SJ6ukwsAEI9lBa/giphy.gif" class="card-img-top" alt="Project 18"> 
 In this Analysis, with helping a small, rural _town modernize_ its vote-counting process, a set of poll data was given called `election_data.csv`. 
 The dataset was composed of three columns: "`Voter ID`", "`County`", and "`Candidate`". 
