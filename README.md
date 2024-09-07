@@ -31,6 +31,7 @@ The total number of months included in the dataset,  The net `total` amount of "
 #
 
 # PyPoll Instructions
+ <img src="https://media3.giphy.com/media/IvV2SJ6ukwsAEI9lBa/giphy.gif" class="card-img-top" alt="Project 18"> 
 In this Analysis, with helping a small, rural _town modernize_ its vote-counting process, a set of poll data was given called `election_data.csv`. 
 The dataset was composed of three columns: "`Voter ID`", "`County`", and "`Candidate`". 
 My task was to create a `Python` script that analyzes the votes and calculates each of the following values:
