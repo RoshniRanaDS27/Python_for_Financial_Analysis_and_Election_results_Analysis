@@ -18,7 +18,9 @@ In these Analysis, have used the concepts i have learned to complete `two` Pytho
 > Key information users need to know to achieve their goal.
 #
 ## PyBank Instructions
-<img src="https://userscontent2.emaze.com/images/b6b785fa-7284-48b1-b48c-8ce2cdc17da8/adf899a55cbe013cff554b6b64242f9c.gif" alt="Project 18">  
+
+<img src="https://clipart-library.com/image_gallery/n1021639.gif" class="card-img-top" alt="Project 18">
+
 In this Analysis, created a `Python` script to analyze the _financial records_ of `Banking` company. 
 `Financial dataset` was given called `budget_data.csv`. The dataset Was composed of two columns: `"Date"` and `"Profit/Losses"`.
 
